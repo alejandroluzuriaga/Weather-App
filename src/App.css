@@ -1,0 +1,275 @@
+:root{
+  --day: -webkit-linear-gradient(135deg, hsla(216, 89%, 53%, 1) 24%, rgb(33, 78, 202) 99%, hsla(0, 0%, 87%, 1) 100%);
+  --night: linear-gradient(-45deg, rgba(0, 0, 51, 1) 0%, rgba(0, 25, 51, 1) 23%, rgb(0, 21, 42) 48%, rgb(0, 31, 51) 76%, rgb(0, 42, 68) 100%);
+}
+
+#root{
+  width: 100vw;
+  height: 100vh;
+  padding: 2rem 7rem;
+}
+
+*{
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  text-rendering: optimizeLegibility;
+}
+
+body{
+  width: 100vw;
+  height: 100vh;
+  padding: 0;
+  margin: 0 auto;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  overflow-x: hidden;
+  --webkit-font-smoothing: antialiased;
+  --moz-osx-font-smoothing: grayscale;
+  background: url('https://img.freepik.com/foto-gratis/estudio-gris-vacio-liso-abstracto-bien-uso-como-fondo-informe-comercial-digital-plantilla-sitio-web-telon-fondo_1258-55967.jpg?w=2000');
+}
+
+.layout{
+  display: flex;
+  flex-direction: column;
+  background: var(--day);
+  border-radius: 20px;
+  padding: 0 5rem;
+  margin: 0 auto;
+  height: 90vh;
+}
+
+.header-container{
+  background-color:rgba(255, 255, 255, 0.103);
+  border-radius: 20px;
+  margin: 1rem 0;
+}
+
+ul{
+  display: flex;
+  justify-content: space-around;
+}
+
+li{
+  list-style: none;
+  cursor: pointer;
+}
+
+li:hover .navbar-element{
+  transform: scale(0);
+  animation: pop-in 0.7s forwards;
+}
+
+@keyframes pop-in {
+  0% {
+    transform: scale(0.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+li a{
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  letter-spacing: 0.2px;
+  word-spacing: -0.2px;
+  font-weight: 700;
+  text-decoration: none;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: capitalize;
+}
+
+/* Estilos para la ciudad actual */
+
+.city-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: fade-in 0.5s ease-out;
+}
+
+  @keyframes fade-in {
+    from {
+      transform: scale(0.5);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+.city-container .City{
+  font-size: 2.7rem;
+  font-weight: 600;
+}
+
+.city-container h2{
+  font-size: 1.4rem;
+  margin: 0 auto;
+  font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.city-container p{
+  font-size: 1.1rem;
+  margin: 0 auto;
+}
+
+.time p{
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.city-container h1{
+  font-size: 9rem;
+}
+
+.top{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 2rem 0 4rem 0;
+}
+
+.img-temp-container{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.temperature h1{
+  margin: 0;
+}
+
+.img-temp-container img{
+  max-width: 5rem;
+}
+
+.weather-status, .bottom{
+  font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: bolder;
+  color: rgb(224, 224, 233);
+}
+
+.bottom{
+  display: flex;
+  width: 80%;
+  border-radius: 20px;
+  justify-content: space-around;
+  background-color:rgba(255, 255, 255, 0.103);
+  margin-bottom: 2rem;
+}
+
+.bottom svg{
+  max-width: 30px;
+  max-height: 30px;
+  stroke: #fff;
+}
+
+.feels-container, .humidity-container, .wind-container, .rain-forecast-container, .snow-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.feels, .humidity, .wind, .rain-forecast, .snow{
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem;
+}
+
+.feels p, .humidity p, .wind p, .rain-forecast p, .forecast-font{
+  margin: 0 auto;
+  font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* Fin estilos para la ciudad actual */
+
+/* Estilos para forecast de la semana */
+
+.week-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: fade-in 0.5s ease-out;
+  gap: 4rem;
+}
+
+.week-container .City{
+  font-size: 2.7rem;
+  font-weight: 600;
+  padding-top: 1rem;
+}
+
+.week-weather {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 2rem;
+  margin-bottom: 5rem;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.103);
+  flex-wrap: wrap;
+}
+
+.day {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(to right, rgba(39, 81, 158, 0.2), #ffffff1c);
+  height: 200px;
+  width: 150px;
+  border-radius: 20px;
+  box-shadow: 10px 0 10px rgba(0, 0, 0, 0.137);
+  transition: box-shadow 0.3s ease;
+}
+
+.week-weather-icon {
+  width: 30%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.day p:not(.day-card-weather-status) {
+  margin: 0;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.day-card-weather-status{
+  font-size: 13px;
+  margin: 0;
+  margin: 0.2rem 0 0.2rem 0;
+  font-weight: bold;
+}
+
+/* Fin estilos para forecast de la semana */
+/*  estilos para otras ciudades */
+
+.city-select{
+  width: 60%;
+  height: 35px;
+  align-self: center;
+}
+
+.city-select select{
+  border-radius: 20px;
+  width: 100%;
+  height: 100%;
+  background-color: #e6e6e6ce;
+  color: rgb(94, 93, 93);
+  cursor: pointer;
+}
+
+.selected-city{
+  font-size: 2.7rem;
+  font-weight: 600;
+  margin-top: -2rem;
+}
+/* Fin estilos para otras ciudadesa */
