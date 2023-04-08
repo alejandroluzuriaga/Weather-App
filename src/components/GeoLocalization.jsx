@@ -1,6 +1,7 @@
 import React from 'react'
 
 const GeoLocalization = () => {
+  
   return (
     <div className='layout'>
       <div className='city-container'>
