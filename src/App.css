@@ -383,7 +383,7 @@ li a{
 
   #root{
     height: 100%;
-    padding: 5% 10%;
+    padding: 0;
   }
 
   body{
@@ -478,14 +478,58 @@ li a{
   }
 
   .bottom{
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
     flex-wrap: wrap;
+    background-color:rgba(255, 255, 255, 0.068);
+    gap: 1rem;
+    padding: 1rem 0;
+  }
+
+  .feels, .humidity, .wind, .rain-forecast, .snow{
+    width: 100%;
+    gap: 0.5rem;
+    padding: 0.2rem;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .feels h2, .humidity h2, .wind h2, .rain-forecast h2, .snow h2{
+    width: 70%;
+  }
+
+  .feels-container, .humidity-container, .wind-container, .rain-forecast-container, .snow-container{
+    padding-left: 1rem;
+    width: 60%;
+  }
+
+  .location .City{
+    margin: 0 auto;
+    height: fit-content;
+  }
+
+  .week-weather-icon{
+    max-width: 20%;
+    max-height: 30%;
+    margin: 0 auto;
+  }
+
+  .week-container{
+    width: 80%;
   }
 
   .week-weather {
     justify-content: center;
-    padding: 1.5rem;
-    margin-bottom: 3rem;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    margin-bottom: 1rem;
+    background-color: rgba(255, 255, 255, 0);
+  }
+
+  .day{
+    width: 100%;
+    padding: 0.3rem;
+    max-height: 180px;
   }
 
   .city-select{
